@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { NewTodoForm } from "./NewTodoForm";
 import { ToDoList } from "./TodoList";
+import { TodoHeadline } from "./TodoHeadline";
 
 export default function App() {
     const [todos, setTodos] = useState(() => {
@@ -40,8 +41,9 @@ export default function App() {
     return (
         <>
             <NewTodoForm onSubmit={addToDo} />
-            <h1 className="header">Todo List</h1>
+            <TodoHeadline text="Todo list 1" />
             <ToDoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+            <TodoHeadline text="Todo list 2" />
         </>
     );
 }
